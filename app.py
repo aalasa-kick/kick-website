@@ -13,16 +13,9 @@ def serve_lottie(filename):
 def index():
     return render_template('index.html')
 
-
-@app.route('/index-3')
-def index3():
-    return render_template('index3.html')
-
-
 @app.route('/contact-us')
 def contactUs():
     return render_template('contact-us.html')
-
 
 # @app.route("/form-submit", methods=["POST"])
 # def formSubmit():
@@ -42,22 +35,6 @@ def contactUs():
 #               "text": collected_message})
 
 #     return redirect(url_for("success"))
-
-
-@app.route('/success')
-def success():
-    return render_template('success.html')
-
-
-@app.route('/terms')
-def terms():
-    return render_template('terms.html')
-
-
-@app.route('/privacy')
-def privacy():
-    return render_template('privacy.html')
-
 
 if __name__ == "__main__":
     app.run(debug=True)
