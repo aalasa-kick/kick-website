@@ -14,9 +14,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/areas-of-practice')
-def areasofPractice():
-    return render_template('areas-of-practice.html')
+@app.route('/index-3')
+def index3():
+    return render_template('index3.html')
 
 
 @app.route('/contact-us')
