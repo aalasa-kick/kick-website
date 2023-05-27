@@ -8,11 +8,17 @@ window.addEventListener('scroll', () => {
     }
 })
 
-let navToggle = document.querySelector('.nav-toggle')
-let bars = document.querySelectorAll('.bar')
-
-function toggleHamburger(e) {
-  bars.forEach(bar => bar.classList.toggle('x'))
-}
-
-navToggle.addEventListener('click', toggleHamburger)
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+  
+  $(document).ready(function(){
+      $('#nav-icon4').click(function(){
+          $(this).toggleClass('open');
+      });
+  });
