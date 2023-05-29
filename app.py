@@ -17,7 +17,7 @@ def index():
 def team():
     return render_template('team.html')
 
-@app.route('/contact-us')
+@app.route('/contact')
 def contact():
     return render_template('contact-us.html')
 

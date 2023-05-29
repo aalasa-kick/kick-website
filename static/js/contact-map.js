@@ -2,25 +2,25 @@
 let map;
 
 async function initMap() {
-  // The location of Uluru
-  const position = { lat: -25.344, lng: 131.031 };
+  // The location of Kick Dublin
+  const position = { lat: 53.3287, lng: -6.2129 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-  // The map, centered at Uluru
+  // The map, centered at Kick Dublin
   map = new Map(document.getElementById("map"), {
-    zoom: 4,
+    zoom: 14,
     center: position,
-    mapId: "DEMO_MAP_ID",
+    mapId: "fd93d6ae1877fd2b",
   });
 
-  // The marker, positioned at Uluru
+  // The marker, positioned at Kick Dublin
   const marker = new AdvancedMarkerElement({
     map: map,
     position: position,
-    title: "Uluru",
+    title: "KICK Dublin",
   });
 }
 
