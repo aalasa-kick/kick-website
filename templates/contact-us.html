@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section id="header">
+    <div class="team-container" data-aos="fade-in">
+        <div class="flexbox-overlay-team">
+            <!-- Content for the flexbox overlay -->
+            <div data-aos="fade-up" data-aos-duration="1500" class="team-header">Contact Us</div>
+            <div data-aos="fade-up" class="team-subheading">
+                <p>Less dead weight, more deadly ideas.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Section below the video -->
+    <div data-aos="fade-up" class="team">
+        <!-- Content for the section below the video -->
+        <div style="margin: 0% 10% 0 10%;">
+            <div class="contact-section-1">
+                <div class="contact-col">
+                    <form class="contact-us-form">
+                        <label for="name">Name</label>
+                        <input class="input" type="text" id="name" name="name" required><br>
+
+                        <label for="email">Email</label>
+                        <input class="input" type="email" id="email" name="email" required><br>
+
+                        <label for="lname">Message</label>
+                        <input class="input message-box" type="text" id="message" name="message" required><br>
+
+                        <button class="index-btn">Submit</button>
+                    </form>
+                </div>
+                <div class="contact-col center-align">
+                    Or contact us directly via LinkedIn.
+                    <div class="slideshow-container">
+                        <div>
+                            <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        </div>
+                        <div class="mySlides">
+                            <a href="/"><img class="circle" src="{{ url_for('static', filename='images/team/neil.png') }}">
+                            <div class="text">Neil McKenna</div>
+                            <div>CEO</div></a>
+                        </div>
+
+                        <div class="mySlides">
+                            <a href="/"><img class="circle" src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                            <div class="text">David Monaghan</div>
+                            <div>Managing Director</div></a>
+                        </div>
+
+                        <div>
+                            <a class="next" onclick="plusSlides(1)">❯</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-section-1">
+            <div class="contact-col" style="margin-top: 100px; background-color: blue;">
+                <div id="map" style="height:550px; width: 100%; "></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact-us-banner" style="margin: 0 10% 0 10%;"
+    style="display: flex; justify-content: space-around; flex-direction: column;">
+    <div data-aos="fade-up" style="text-align: center; padding-top: 6%;">
+        <a href="/contact-us">
+            <button class="index-btn btn-contact-us">Contact Us</button>
+        </a>
+    </div>
+    <div data-aos="fade-up" style="text-align: center; padding-top: 20%; padding-bottom: 10%;">
+        <a href="#top" class="chevron back-to-top-btn">
+            <img src="{{ url_for('static', filename='images/chevrons/WhiteBTT.svg') }}">
+        </a>
+    </div>
+</section>
+
+{% endblock %}

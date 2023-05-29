@@ -13,6 +13,14 @@ def serve_lottie(filename):
 def index():
     return render_template('index.html')
 
+@app.route('/team')
+def team():
+    return render_template('team.html')
+
+@app.route('/contact-us')
+def contact():
+    return render_template('contact-us.html')
+
 # @app.route("/form-submit", methods=["POST"])
 # def formSubmit():
 #     name = request.form.get("enquiry_name")

@@ -1,345 +1,144 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Home | Kick</title>
-    <meta name="robots" content="index,follow" />
-    <meta name="description"
-        content="A creative agency, we give our clients the ultimate competitive advantage - the ability to outsmart the competition." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="format-detection" content="telephone=no">
+{% block content %}
 
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"> </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-    <!-- <link rel="icon" href="/2021/images/icons/favicon.png" sizes="32x32" type="image/png" /> -->
-    <!-- <link rel="apple-touch-icon" href="/2021/images/icons/android-hires.png" /> -->
-    <!-- <script src="https://kit.fontawesome.com/362467f034.js" crossorigin="anonymous"></script> -->
-    <!-- <script type="text/javascript"
-    src="//platform-api.sharethis.com/js/sharethis.js#property=5a941e64e28d380013fe526d&product=inline-share-buttons"></script> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
-    integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6574672/6471592/css/fonts.css" /> -->
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-
-
-    <link rel="icon" href="https://kickdublin.ie/2021/images/icons/favicon.png" sizes="32x32" type="image/png" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- <link rel="stylesheet" href="https://kickdublin.ie/2021/css/style.css?v=1.4" /> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <script defer src="{{ url_for('static', filename='js/header-control.js') }}"></script>
-
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
-        rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-
-
-</head>
-
-<body id="top" style="background-color: black; color: white;">
-    <!-- NAV -->
-    <nav class="custom-nav">
-        <div class="nav-contents-container">
-            <div>
-                <a href="/">
-                    <div style="width: 170px;">
-                        <lottie-player id="logoLottie"
-                            src="{{ url_for('static', filename='js/lottie_logo.json') }}"></lottie-player>
-                    </div>
-                </a>
-            </div>
-            <div class="links-container">
-                <ul class="links" style="display: flex; column-gap: 30px;">
-                    <li class="link-item"><a class="nav-link teal-hover" href='/clients'>Clients</a></li>
-                    <li class="link-item"><a class="nav-link teal-hover" href='/work'>Work</a></li>
-                    <li class="link-item"><a class="nav-link teal-hover" href='/team'>Team</a></li>
-                    <li class="link-item"><a class="nav-link teal-hover" href='/contact'>Contact</a></li>
-                </ul>
-            </div>
-            <div class="burger-holder">
-                <!-- Top Navigation Menu -->
-                <div id="nav-icon4" onclick="myFunction()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
+<section id="header">
+    <div class="video-container" data-aos="fade-in">
+        <video playsinline loop autoplay muted
+            poster="{{ url_for('static', filename='images/index/video-poster.jpg') }}" style="filter: brightness(0.6);">
+            <!-- <source src="https://kickdublin.ie/video/showreel-v4-compressed-no-sound.mp4" type="video/mp4"> -->
+            <source src="https://kickdublin.ie/video/showreel-v4-compressed-no-sound.webm" type="video/webm">
+            Your browser does not support this video format
+        </video>
+        <div class="flexbox-overlay">
+            <!-- Content for the flexbox overlay -->
+            <div data-aos="fade-up" data-aos-duration="1500">An advertising agency, we help brands compete and
+                flourish.</div>
         </div>
-        <div class="topnav">
-            <div id="myLinks">
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- <header class="site-header">
-        <div class="site-header__wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 flex items-center justify-between">
-                        <a href="/">
-                            <div style="width: 170px;">
-                                <lottie-player id="logoLottie"
-                                    src="{{ url_for('static', filename='js/lottie_logo.json') }}"></lottie-player>
-                            </div>
-                        </a>
-                        <button class="site-nav__toggle hamburger hamburger--stand" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                            <span class="sr-only">Open Menu</span>
-                        </button>
-                    </div>
-                    <div class="col-12 site-nav">
-                        <ul>
-                            <li><a href='/clients'>Clients</a></li>
-                            <li><a href='/work'>Work</a></li>
-                            <li><a href='/team'>Team</a></li>
-                            <li><a href='/contact'>Contact</a></li>
-                        </ul>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header> -->
-
-    <section id="header">
-        <div class="video-container" data-aos="fade-in">
-            <video playsinline loop autoplay muted
-                poster="{{ url_for('static', filename='images/index/video-poster.jpg') }}"
-                style="filter: brightness(0.6);">
-                <!-- <source src="https://kickdublin.ie/video/showreel-v4-compressed-no-sound.mp4" type="video/mp4"> -->
-                <source src="https://kickdublin.ie/video/showreel-v4-compressed-no-sound.webm" type="video/webm">
-                Your browser does not support this video format
-            </video>
-            <div class="flexbox-overlay">
-                <!-- Content for the flexbox overlay -->
-                <div data-aos="fade-up" data-aos-duration="1500">An advertising agency, we help brands compete and
-                    flourish.</div>
-            </div>
-            <a href="#what-we-do" class="down-arrow chevron">
-                <img src="{{ url_for('static', filename='images/chevrons/WhiteChevron.svg') }}">
-            </a>
-        </div>
-        <div id="what-we-do" style="height:70px;"></div>
-        <!-- Section below the video -->
-        <div data-aos="fade-up" class="what-we-do">
-            <!-- Content for the section below the video -->
-            <div style="margin: 5% 10% 0 10%;">
-                <h1 data-aos="fade-up" class="mb-12" style="font-size: 3rem; line-height: 3rem; text-align: left;">
-                    What We Do</h1>
-                <div data-aos="fade-up">
-                    <p>The agency exists to provide a more
-                        single-minded, holistic and results-driven focus to our clients' marketing activity. We work
-                        across the following areas...</p>
-                </div>
-                <div class="services-table-container">
-                    <div class="services-table">
-                        <div class="services-table-row" data-aos="fade-up">
-                            <div class="services-left-col">Advertising</div>
-                            <div class="services-right-col">Ambition for the best creative leads all of us. We care
-                                about the quality and integrity of our work above all else.</div>
-                        </div>
-                        <div class="services-table-row" data-aos="fade-up">
-                            <div class="services-left-col">Strategy</div>
-                            <div class="services-right-col">We believe the path to world-class work is through rigorous
-                                creative strategy that has clear and measurable objectives and is rooted in Brand
-                                Purpose.</div>
-                        </div>
-                        <div class="services-table-row" data-aos="fade-up">
-                            <div class="services-left-col">Graphic Design</div>
-                            <div class="services-right-col">From product innovation to performance marketing, we believe
-                                all our work needs to work in concert to connect every element at every phase of the
-                                customer journey.</div>
-                        </div>
-                        <div class="services-table-row" data-aos="fade-up">
-                            <div class="services-left-col">Brand Activation</div>
-                            <div class="services-right-col">We strive to create work that adds value to people’s lives,
-                                not noise. We believe our industry needs to be transformed to create things people
-                                actually want and welcome.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <a href="#what-we-do" class="down-arrow chevron">
+            <img src="{{ url_for('static', filename='images/chevrons/WhiteChevron.svg') }}">
+        </a>
+    </div>
+    <div id="what-we-do" style="height:67px;"></div>
+    <!-- Section below the video -->
+    <div data-aos="fade-up" class="what-we-do">
+        <!-- Content for the section below the video -->
+        <div style="margin: 5% 10% 0 10%;">
+            <h1 data-aos="fade-up" class="mb-12" style="font-size: 3rem; line-height: 3rem; text-align: left;">
+                What We Do</h1>
             <div data-aos="fade-up">
-                <div id="our-experience"
-                    style="color: white; background-color: black; margin-left: 10%; margin-right: 10%;">
-                    <div style="text-align: center; ">
-                        <img style="height: 34vw; margin-top: 3%; margin-bottom: 3%;"
-                            src="{{ url_for('static', filename='images/index/armed-forces-helicopter.jpg') }}">
+                <p>The agency exists to provide a more
+                    single-minded, holistic and results-driven focus to our clients' marketing activity. We work
+                    across the following areas...</p>
+            </div>
+            <div class="services-table-container">
+                <div class="services-table">
+                    <div class="services-table-row" data-aos="fade-up">
+                        <div class="services-left-col">Advertising</div>
+                        <div class="services-right-col">Ambition for the best creative leads all of us. We care
+                            about the quality and integrity of our work above all else.</div>
                     </div>
-                    <div style="margin-left: 3.5vw; margin-right: 3.5vw;">
-                        <h1 class="mb-12" style="font-size: 3rem;
-                            line-height: 3rem; font-weight: 700;" data-aos="fade-up">Our Experience</h1>
-                        <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices
-                            nibh sed leo iaculis tristique. Maecenas pharetra suscipit enim, eget condimentum turpis
-                            pellentesque at. </p>
+                    <div class="services-table-row" data-aos="fade-up">
+                        <div class="services-left-col">Strategy</div>
+                        <div class="services-right-col">We believe the path to world-class work is through rigorous
+                            creative strategy that has clear and measurable objectives and is rooted in Brand
+                            Purpose.</div>
                     </div>
-                    <div style="text-align: center;">
-                        <a href="/">
-                            <button class="index-btn btn-our-experience" data-aos="fade-up">See more</button>
-                        </a>
+                    <div class="services-table-row" data-aos="fade-up">
+                        <div class="services-left-col">Graphic Design</div>
+                        <div class="services-right-col">From product innovation to performance marketing, we believe
+                            all our work needs to work in concert to connect every element at every phase of the
+                            customer journey.</div>
+                    </div>
+                    <div class="services-table-row" data-aos="fade-up">
+                        <div class="services-left-col">Brand Activation</div>
+                        <div class="services-right-col">We strive to create work that adds value to people’s lives,
+                            not noise. We believe our industry needs to be transformed to create things people
+                            actually want and welcome.</div>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 4%; margin-bottom: 4%;">
-                    <a href="#our-work" class="scroll-button chevron">
-                        <img src="{{ url_for('static', filename='images/chevrons/BlackChevron.svg') }}">
+            </div>
+        </div>
+        <div data-aos="fade-up">
+            <div id="our-experience"
+                style="color: white; background-color: black; margin-left: 10%; margin-right: 10%;">
+                <div style="text-align: center; ">
+                    <img style="height: 34vw; margin-top: 3%; margin-bottom: 3%;"
+                        src="{{ url_for('static', filename='images/index/armed-forces-helicopter.jpg') }}">
+                </div>
+                <div style="margin-left: 3.5vw; margin-right: 3.5vw;">
+                    <h1 class="mb-12" style="font-size: 3rem;
+                            line-height: 3rem; font-weight: 700;" data-aos="fade-up">Our Experience</h1>
+                    <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices
+                        nibh sed leo iaculis tristique. Maecenas pharetra suscipit enim, eget condimentum turpis
+                        pellentesque at. </p>
+                </div>
+                <div style="text-align: center;">
+                    <a href="/">
+                        <button class="index-btn btn-our-experience" data-aos="fade-up">See more</button>
                     </a>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 4%; margin-bottom: 4%;">
+
+                <a href="#our-work" class="scroll-button chevron">
+                    <div id="our-work"></div>
+                    <img src="{{ url_for('static', filename='images/chevrons/BlackChevron.svg') }}">
+                </a>
+            </div>
         </div>
-    </section>
-
-    <div class="all-works">
-        <section class="banner" id="our-work">
-            <div class="banner-background" style="background-image: url('/static/images/index/5-lamps-banner.jpg');"></div>
-            <div class="banner-text">
-                <a href="/">
-                    <p>5 Lamps</p>
-                    <h3>Relaunching the Beer from Ah Here</h3>
-                    <button class="index-btn">See more</button>
-                </a>
-            </div>
-        </section>
-
-        <section class="banner">
-            <div class="banner-background" style="background-image: url('/static/images/index/armed-forces-banner.jpg');">
-            </div>
-            <div class="banner-text banner-text__middle-item">
-                <a href="/">
-                    <p>Irish Armed Forces</p>
-                    <h3>"Be More" campaign</h3>
-                </a>
-                <button class="index-btn">See more</button>
-            </div>
-        </section>
-
-        <section class="banner">
-            <div class="banner-background" style="background-image: url('/static/images/index/ds4-banner.jpg');"></div>
-            <div class="banner-text">
-                <a href="/">
-                    <p>DS Automobiles</p>
-                    <h3>DS4 Launch</h3>
-                </a>
-                <button class="index-btn">See more</button>
-            </div>
-        </section>
     </div>
+</section>
 
-    <!-- <section id="work-banners" class="work-banner">
-        <section class="work-banner-item">
-            <div class="index-five-lamps"></div>
-            <div class="work-banner-copy-container">
-                <h3>WORK</h3>
-                <h2>Relaunching the Beer from Ah Here<h2>
-                <h3>5 Lamps</h3>
-                <button>See more</button>
-            </div>
-        </section>
-
-        <section class="work-banner-item index-irish-defence-forces">
-            <div class="work-banner-copy-container">
-                WORK<br>
-                "Be More" Campaign<br>
-                Irish Defence Forces<br>
-                <button>See more</button>
-            </div>
-        </section>
-
-        <section class="work-banner-item index-ds">
-            <div class="work-banner-copy-container">
-                WORK<br>
-                DS4 Launch<br>
-                DS Automobiles<br>
-                <button>See more</button>
-            </div>
-        </section>
-    </section> -->
-
-    <section id="contact-us-banner" style="margin: 0 10% 0 10%;"
-        style="display: flex; justify-content: space-around; flex-direction: column;">
-        <div data-aos="fade-up" style="text-align: center; padding-top: 6%;">
-            <a href="/contact-us">
-                <button class="index-btn btn-contact-us">Contact Us</button>
-            </a>
+<div class="all-works">
+    <section class="banner">
+        <div class="banner-background" style="background-image: url('/static/images/index/5-lamps-banner.jpg');">
         </div>
-        <div data-aos="fade-up" style="text-align: center; padding-top: 20%; padding-bottom: 10%;">
-            <a href="#top" class="chevron back-to-top-btn">
-                <img src="{{ url_for('static', filename='images/chevrons/WhiteBTT.svg') }}">
+        <div class="banner-text">
+            <a href="/">
+                <p>5 Lamps</p>
+                <h3>Relaunching the Beer from Ah Here</h3>
+                <button class="index-btn">See more</button>
             </a>
         </div>
     </section>
 
-
-
-
-
-    <footer class="site-footer">
-        <div>
-            <p>
-                Gilford Hall,<br>
-                13 Gilford Road,<br>
-                Sandymount,<br>
-                Dublin<br>
-                <hr>
-                <strong>D04 TY84</strong>
-            </p>
+    <section class="banner">
+        <div class="banner-background" style="background-image: url('/static/images/index/armed-forces-banner.jpg');">
         </div>
-        <div>
-            <ul class="site-footer__contact">
-                <li>
-                    <p><i class="icon-envelope"></i><a href="mailto:info@kickdublin.ie"> info@kickdublin.ie</p></a>
-                </li>
-                <li>
-                    <p><i class="icon-phone"></i><a href="tel:+353 1 260 2091"> +353 1 260 2091</p></a>
-                </li>
-                <li>
-                    <hr>
-                </li>
-                <li>
-                    <div class="site-footer__social">
-                        <div><a href=""><i class="icon-facebook icon-large"></i></a></div>
-                        <div><a href=""><i class="icon-linkedin icon-large"></i></a></div>
-                        <div><a href=""><i class="icon-instagram icon-large"></i></a></div>
-                        <div><a href=""><i class="icon-twitter icon-large"></i></a></div>
-                    </div>
-                </li>
-            </ul>
+        <div class="banner-text banner-text__middle-item">
+            <a href="/">
+                <p>Irish Armed Forces</p>
+                <h3>"Be More" campaign</h3>
+            </a>
+            <button class="index-btn">See more</button>
         </div>
+    </section>
 
-        <div>
-            <p><a href="/"><img src="{{ url_for('static', filename='images/logos/logo.svg') }}" width="170"
-                        alt="Kick Logo"></a></p>
+    <section class="banner">
+        <div class="banner-background" style="background-image: url('/static/images/index/ds4-banner.jpg');"></div>
+        <div class="banner-text">
+            <a href="/">
+                <p>DS Automobiles</p>
+                <h3>DS4 Launch</h3>
+            </a>
+            <button class="index-btn">See more</button>
         </div>
-        <!-- </div> -->
-        <!-- </div> -->
-    </footer>
+    </section>
+</div>
 
-    <!-- End of page content -->
-    <!-- <script src="{{ url_for('static', filename='js/unknown.js') }}"></script> -->
-    <!-- <script src="{{ url_for('static', filename='js/modernizr-3.5.0.min.js') }}"></script> -->
-    <script src="{{ url_for('static', filename='js/lottie.js') }}"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
-    <!-- <script src="{{ url_for('static', filename='js/dunno.js') }}"></script> -->
-    <!-- <script>let slideUp = (e, t = 500) => { e.style.transitionProperty = "height, margin, padding", e.style.transitionDuration = t + "ms", e.style.boxSizing = "border-box", e.style.height = e.offsetHeight + "px", e.offsetHeight, e.style.overflow = "hidden", e.style.height = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0, e.style.marginTop = 0, e.style.marginBottom = 0, window.setTimeout(() => { e.style.display = "none", e.style.removeProperty("height"), e.style.removeProperty("padding-top"), e.style.removeProperty("padding-bottom"), e.style.removeProperty("margin-top"), e.style.removeProperty("margin-bottom"), e.style.removeProperty("overflow"), e.style.removeProperty("transition-duration"), e.style.removeProperty("transition-property") }, t) }, slideDown = (e, t = 500) => { e.style.removeProperty("display"); let o = window.getComputedStyle(e).display; "none" === o && (o = "block"), e.style.display = o; var a = e.offsetHeight; e.style.overflow = "hidden", e.style.height = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0, e.style.marginTop = 0, e.style.marginBottom = 0, e.offsetHeight, e.style.boxSizing = "border-box", e.style.transitionProperty = "height, margin, padding", e.style.transitionDuration = t + "ms", e.style.height = a + "px", e.style.removeProperty("padding-top"), e.style.removeProperty("padding-bottom"), e.style.removeProperty("margin-top"), e.style.removeProperty("margin-bottom"), window.setTimeout(() => { e.style.removeProperty("height"), e.style.removeProperty("overflow"), e.style.removeProperty("transition-duration"), e.style.removeProperty("transition-property") }, t) }, slideToggle = (e, t = 500) => ("none" === window.getComputedStyle(e).display ? slideDown : slideUp)(e, t), scrollpos = window.scrollY; const header = document.querySelector(".site-header"), $win = $(window); let windowHeight = $win.height(); window.addEventListener("scroll", () => { scrollpos = window.scrollY, 0 < scrollpos ? header.classList.add("site-header--fixed") : header.classList.remove("site-header--fixed"), $(".page-home .site-header").length && ($(window).scrollTop() > windowHeight - $(".site-header").height() ? $(".page-home .site-header").addClass("site-header--opaque") : $(".page-home .site-header").removeClass("site-header--opaque")) }); const navToggle = document.querySelector(".site-nav__toggle"), nav = document.querySelector(".site-nav > ul"); navToggle.addEventListener("click", () => { document.querySelector(".site-header").classList.toggle("site-header--menu-open"), navToggle.classList.toggle("is-active"), slideToggle(nav, 200) }), window.addEventListener("scroll", () => { navToggle.classList.remove("is-active"), document.querySelector(".site-header").classList.remove("site-header--menu-open"), slideUp(nav, 200) }); const modalLink = document.querySelector(".image-video-link"), modal = document.querySelector(".modal"); function msieversion() { window.navigator.userAgent.indexOf("MSIE "); var e = document.querySelector(".using-ie"); return window.document.documentMode && e.classList.add("using-ie--show"), !1 } modal && (modalLink && modalLink.addEventListener("click", () => { modal.classList.add("modal--open"), setTimeout(function () { modal.classList.add("modal--fade-in") }, 500) }), modal.addEventListener("click", () => { modal.classList.remove("modal--fade-in"), setTimeout(function () { modal.classList.remove("modal--open") }, 500) })); var $url, $player = document.getElementById("podcast_player"), $source = $("#podcast_player source"), $playerPlaying = !1; $(document).ready(function () { msieversion(), AOS.init(), $(".testimonials").length && $(".testimonials-slider").slick({ infinite: !0, prevArrow: $(".testimonials__prev"), nextArrow: $(".testimonials__next") }), $("#loadMoreWork").length && (page = 1, parentEl = $("#loadMoreWork").parent().parent(), lastId = $("#loadMoreWork").data("lastid"), $("#loadMoreWork").on("click", function (e) { e.preventDefault(), $.ajax({ type: "GET", dataType: "json", url: "/ajax/load_portfolio_items?lastid=" + lastId + "&page=" + page, success: function (e) { $(".ajax_loader").hide(), $(".ajax_loader_position").hide(), "success" == e.status && ($("#loadMoreTarget").append(), $(e.html).insertBefore(parentEl), page++, e.morepages || parentEl.remove()) } }) })), $(".podcast-card__play-pause").click(function (e) { $url = $(this).attr("data-episode"), $source.attr("src") == $url ? $player.paused ? ($playerPlaying = !0, $player.play()) : ($playerPlaying = !1, $player.pause()) : ($source.attr("src", $url), $player.load(), $player.play(), $playerPlaying = !0), $(".podcast-card__play-pause i").removeClass("fa-pause-circle").addClass("fa-play-circle"), $(".podcast-widget").show(), $playerPlaying ? $(this).children("i").removeClass("fa-play-circle").addClass("fa-pause-circle") : $(this).children("i").removeClass("fa-pause-circle").addClass("fa-play-circle") }), $(".podcast-card__share").click(function (e) { $url = $(this).attr("data-url"), copyToClipboard($url), setTimeout(function () { $(".podcast-card__share").popover("hide") }, 2e3) }) }); var imageSectionNodes = document.querySelectorAll(".image-section"), imageSections = Array.from(imageSectionNodes); function distanceFromTop(e) { return e.getBoundingClientRect().top } $(document).ready(function () { var e; $(".page-content").length && (e = document.querySelector(".page-content"), Array.from(e.children).map(e => e.classList)), $(".case-study-content > p video, .case-study-content > iframe").length && ($(".case-study-content > p video, .case-study-content > iframe").appendTo(".case-study-videos #videos"), $(".case-study-videos #videos p video, .case-study-videos #videos iframe").wrap("<div class='video'></div>")) }), (767 < screen.width || 767 < window.innerWidth) && $(window).scroll(function () { imageSections.forEach(function (e) { var a = 991 < screen.width || 991 < window.innerWidth ? distanceFromTop(e) : distanceFromTop(e) - 100, e = e.querySelectorAll(".image-section__images .animate-title, .image-section__bg .animate-title, .image-section__images, .image-section__bg"), e = Array.from(e); e.forEach(function (e, t) { var o = a - 70; e.style.top = 0 < o ? o + "px" : "0px" }) }) }), $(() => { $(".fixed-video-bg__video").length && $(".fixed-video-bg__video")[0].play() }), $("body").on("hidden.bs.popover", function (e) { $(e.target).data("bs.popover").inState = { click: !1, hover: !1, focus: !1 } }), $player && ($player.addEventListener("pause", function () { $(".podcast-card__play-pause i").removeClass("fa-pause-circle").addClass("fa-play-circle") }), $player.addEventListener("ended", function () { $(".podcast-card__play-pause i").removeClass("fa-pause-circle").addClass("fa-play-circle") }), $player.addEventListener("play", function () { $(".podcast-card__play-pause").each(function (e) { $(this).attr("data-episode") == $source.attr("src") && $(this).children("i").removeClass("fa-play-circle").addClass("fa-pause-circle") }) }));</script> -->
-    <!-- <script>let slideUp = (e, t = 500) => { e.style.transitionProperty = "height, margin, padding", e.style.transitionDuration = t + "ms", e.style.boxSizing = "border-box", e.style.height = e.offsetHeight + "px", e.offsetHeight, e.style.overflow = "hidden", e.style.height = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0, e.style.marginTop = 0, e.style.marginBottom = 0, window.setTimeout(() => { e.style.display = "none", e.style.removeProperty("height"), e.style.removeProperty("padding-top"), e.style.removeProperty("padding-bottom"), e.style.removeProperty("margin-top"), e.style.removeProperty("margin-bottom"), e.style.removeProperty("overflow"), e.style.removeProperty("transition-duration"), e.style.removeProperty("transition-property") }, t) }, slideDown = (e, t = 500) => { e.style.removeProperty("display"); let o = window.getComputedStyle(e).display; "none" === o && (o = "block"), e.style.display = o; var a = e.offsetHeight; e.style.overflow = "hidden", e.style.height = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0, e.style.marginTop = 0, e.style.marginBottom = 0, e.offsetHeight, e.style.boxSizing = "border-box", e.style.transitionProperty = "height, margin, padding", e.style.transitionDuration = t + "ms", e.style.height = a + "px", e.style.removeProperty("padding-top"), e.style.removeProperty("padding-bottom"), e.style.removeProperty("margin-top"), e.style.removeProperty("margin-bottom"), window.setTimeout(() => { e.style.removeProperty("height"), e.style.removeProperty("overflow"), e.style.removeProperty("transition-duration"), e.style.removeProperty("transition-property") }, t) }, slideToggle = (e, t = 500) => ("none" === window.getComputedStyle(e).display ? slideDown : slideUp)(e, t), scrollpos = window.scrollY; const header = document.querySelector(".site-header"), $win = $(window); let windowHeight = $win.height(); window.addEventListener("scroll", () => { scrollpos = window.scrollY, 0 < scrollpos ? header.classList.add("site-header--fixed") : header.classList.remove("site-header--fixed"), $(".page-home .site-header").length && ($(window).scrollTop() > windowHeight - $(".site-header").height() ? $(".page-home .site-header").addClass("site-header--opaque") : $(".page-home .site-header").removeClass("site-header--opaque")) }); const navToggle = document.querySelector(".site-nav__toggle"), nav = document.querySelector(".site-nav > ul"); navToggle.addEventListener("click", () => { document.querySelector(".site-header").classList.toggle("site-header--menu-open"), navToggle.classList.toggle("is-active"), slideToggle(nav, 200) }), window.addEventListener("scroll", () => { navToggle.classList.remove("is-active"), document.querySelector(".site-header").classList.remove("site-header--menu-open"), slideUp(nav, 200) }); const modalLink = document.querySelector(".image-video-link"), modal = document.querySelector(".modal"); function msieversion() { window.navigator.userAgent.indexOf("MSIE "); var e = document.querySelector(".using-ie"); return window.document.documentMode && e.classList.add("using-ie--show"), !1 } modal && (modalLink && modalLink.addEventListener("click", () => { modal.classList.add("modal--open"), setTimeout(function () { modal.classList.add("modal--fade-in") }, 500) }), modal.addEventListener("click", () => { modal.classList.remove("modal--fade-in"), setTimeout(function () { modal.classList.remove("modal--open") }, 500) })); var $url, $player = document.getElementById("podcast_player"), $source = $("#podcast_player source"), $playerPlaying = !1; $(document).ready(function () { msieversion(), AOS.init(), $(".testimonials").length && $(".testimonials-slider").slick({ infinite: !0, prevArrow: $(".testimonials__prev"), nextArrow: $(".testimonials__next") }), $("#loadMoreWork").length && (page = 1, parentEl = $("#loadMoreWork").parent().parent(), lastId = $("#loadMoreWork").data("lastid"), $("#loadMoreWork").on("click", function (e) { e.preventDefault(), $.ajax({ type: "GET", dataType: "json", url: "/ajax/load_portfolio_items?lastid=" + lastId + "&page=" + page, success: function (e) { $(".ajax_loader").hide(), $(".ajax_loader_position").hide(), "success" == e.status && ($("#loadMoreTarget").append(), $(e.html).insertBefore(parentEl), page++, e.morepages || parentEl.remove()) } }) })), $(".podcast-card__play-pause").click(function (e) { $url = $(this).attr("data-episode"), $source.attr("src") == $url ? $player.paused ? ($playerPlaying = !0, $player.play()) : ($playerPlaying = !1, $player.pause()) : ($source.attr("src", $url), $player.load(), $player.play(), $playerPlaying = !0), $(".podcast-card__play-pause i").removeClass("fa-pause-circle").addClass("fa-play-circle"), $(".podcast-widget").show(), $playerPlaying ? $(this).children("i").removeClass("fa-play-circle").addClass("fa-pause-circle") : $(this).children("i").removeClass("fa-pause-circle").addClass("fa-play-circle") }), $(".podcast-card__share").click(function (e) { $url = $(this).attr("data-url"), copyToClipboard($url), setTimeout(function () { $(".podcast-card__share").popover("hide") }, 2e3) }) }); var imageSectionNodes = document.querySelectorAll(".image-section"), imageSections = Array.from(imageSectionNodes); function distanceFromTop(e) { return e.getBoundingClientRect().top } $(document).ready(function () { var e; $(".page-content").length && (e = document.querySelector(".page-content"), Array.from(e.children).map(e => e.classList)), $(".case-study-content > p video, .case-study-content > iframe").length && ($(".case-study-content > p video, .case-study-content > iframe").appendTo(".case-study-videos #videos"), $(".case-study-videos #videos p video, .case-study-videos #videos iframe").wrap("<div class='video'></div>")) }), (767 < screen.width || 767 < window.innerWidth) && $(window).scroll(function () { imageSections.forEach(function (e) { var a = 991 < screen.width || 991 < window.innerWidth ? distanceFromTop(e) : distanceFromTop(e) - 100, e = e.querySelectorAll(".image-section__images .animate-title, .image-section__bg .animate-title, .image-section__images, .image-section__bg"), e = Array.from(e); e.forEach(function (e, t) { var o = a - 70; e.style.top = 0 < o ? o + "px" : "0px" }) }) }), $(() => { $(".fixed-video-bg__video").length && $(".fixed-video-bg__video")[0].play() }), $("body").on("hidden.bs.popover", function (e) { $(e.target).data("bs.popover").inState = { click: !1, hover: !1, focus: !1 } }), $player && ($player.addEventListener("pause", function () { $(".podcast-card__play-pause i").removeClass("fa-pause-circle").addClass("fa-play-circle") }), $player.addEventListener("ended", function () { $(".podcast-card__play-pause i").removeClass("fa-pause-circle").addClass("fa-play-circle") }), $player.addEventListener("play", function () { $(".podcast-card__play-pause").each(function (e) { $(this).attr("data-episode") == $source.attr("src") && $(this).children("i").removeClass("fa-play-circle").addClass("fa-pause-circle") }) }));</script> -->
+<section id="contact-us-banner" style="margin: 0 10% 0 10%;"
+    style="display: flex; justify-content: space-around; flex-direction: column;">
+    <div data-aos="fade-up" style="text-align: center; padding-top: 6%;">
+        <a href="/contact-us">
+            <button class="index-btn btn-contact-us">Contact Us</button>
+        </a>
+    </div>
+    <div data-aos="fade-up" style="text-align: center; padding-top: 20%; padding-bottom: 10%;">
+        <a href="#top" class="chevron back-to-top-btn">
+            <img src="{{ url_for('static', filename='images/chevrons/WhiteBTT.svg') }}">
+        </a>
+    </div>
+</section>
 
-</body>
-
-</html>
+{% endblock %}

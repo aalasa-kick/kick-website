@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section id="header">
+    <div class="team-container" data-aos="fade-in">
+        <div class="flexbox-overlay-team">
+            <!-- Content for the flexbox overlay -->
+            <div data-aos="fade-up" data-aos-duration="1500" class="team-header">Meet the Team</div>
+            <div data-aos="fade-up" class="team-subheading">
+                <p>Less dead weight, more deadly ideas. Meet our talented team of industry experts. From creatives, to
+                    advertising and everything in between.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Section below the video -->
+    <div data-aos="fade-up" class="team">
+        <!-- Content for the section below the video -->
+        <div style="margin: 0% 10% 0 10%;">
+            <div class="team-table-container">
+                <div class="team-table wrap-around">
+                    <div data-aos="fade-up" data-aos-duration="1500" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/neil.png') }}">
+                        <h1>Neil McKenna</h1>
+                        <h4>CEO</h4>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-duration="2000" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                        <h1>Kate McKenna</h1>
+                        <h4>Director</h4>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-duration="2500" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                        <h1>David Monaghan</h1>
+                        <h4>Managing Director</h4>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-duration="3000" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                        <h1>John Breslin</h1>
+                        <h4>Senior Account Manager</h4>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-duration="1500" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                        <h1>Céline Cahill</h1>
+                        <h4>Finishing Artist</h4>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-duration="2000" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                        <h1>Andrew Browne</h1>
+                        <h4>Account Manager</h4>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-duration="2500" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                        <h1>Niamh Smyth</h1>
+                        <h4>Account Manager</h4>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-duration="3000" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                        <h1>Aaron Jones</h1>
+                        <h4>In-house Designer</h4>
+                    </div>
+                </div>
+                <div class="team-table" data-aos-duration="1500" style="justify-content: center;">
+                    <div data-aos="fade-up" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                        <h1>Mary Harnett</h1>
+                        <h4>Accounts Administrator</h4>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="2000" class="team-table-item">
+                        <img src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                        <h1>Aalasa Fidler</h1>
+                        <h4>Front End Developer</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact-us-banner" style="margin: 0 10% 0 10%;"
+    style="display: flex; justify-content: space-around; flex-direction: column;">
+    <div data-aos="fade-up" style="text-align: center; padding-top: 6%;">
+        <a href="/contact-us">
+            <button class="index-btn btn-contact-us">Contact Us</button>
+        </a>
+    </div>
+    <div data-aos="fade-up" style="text-align: center; padding-top: 20%; padding-bottom: 10%;">
+        <a href="#top" class="chevron back-to-top-btn">
+            <img src="{{ url_for('static', filename='images/chevrons/WhiteBTT.svg') }}">
+        </a>
+    </div>
+</section>
+
+{% endblock %}
