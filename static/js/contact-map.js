@@ -11,7 +11,7 @@ async function initMap() {
 
   // The map, centered at Kick Dublin
   map = new Map(document.getElementById("map"), {
-    zoom: 14,
+    zoom: 15,
     center: position,
     mapId: "fd93d6ae1877fd2b",
   });

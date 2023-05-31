@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="header">
+    <div class="work-container" data-aos="fade-in">
+        <div class="flexbox-overlay-team">
+            <!-- Content for the flexbox overlay -->
+            <div data-aos="fade-up" data-aos-duration="1500" class="team-header"><img
+                    src="{{ url_for('static', filename='images/chevrons/DoubleWhiteChevron.png') }}"
+                    style="filter: invert(1);">Our Work</div>
+            <div data-aos="fade-up" class="team-subheading">
+                <p>The agency exists to provide a more single-minded holistic, results driven focus to our client’s
+                    marketing activity.
+                    We work across the following areas.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Section below the video -->
+    <div data-aos="fade-up" class="work">
+        <!-- Content for the section below the video -->
+        <div style="margin: 0% 10% 0 10%;">
+            <div class="work-section-1">
+                <div class="work-col-l">
+                    <img src="https://www.shelflife.ie/wp-content/uploads/2022/12/Five-Lamps-Launch-KV_page-0001-768x384.jpg"
+                        style="width: 100%;">
+                </div>
+                <div class="work-col-r">
+                    <button class="index-btn work-btn">5 Lamps</button>
+                    <h2>TV/OOH/DOOH/SOCIAL</h2>
+                    <p>Acitectur? Quiatemquas sima solenditati te et repernatur aut laciet harum voluptas eveni aut
+                        ventibus ut porest.</p>
+                </div>
+            </div>
+
+            <div class="work-section-1">
+                <div class="work-col-l">
+                    <a href="/2023/irish-defence-forces"><button class="index-btn work-btn">Defence Forces</button></a>
+                    <h2>TV/OOH/DOOH/SOCIAL</h2>
+                    <p>Acitectur? Quiatemquas sima solenditati te et repernatur aut laciet harum voluptas eveni aut
+                        ventibus ut porest.</p>
+                </div>
+                <div class="work-col-r">
+                    <a href="/2023/irish-defence-forces"><img
+                            src="{{ url_for('static', filename='images/index/armed-forces-helicopter.jpg') }}"
+                            style="width: 100%;"></a>
+                </div>
+            </div>
+
+            <div class="work-section-1">
+                <div class="work-col-l">
+                    <img src="{{ url_for('static', filename='images/work/peu.png') }}" style="width: 100%;">
+                </div>
+                <div class="work-col-r">
+                    <button class="index-btn work-btn">Peugeot</button>
+                    <h2>TV/OOH/DOOH/SOCIAL</h2>
+                    <p>Acitectur? Quiatemquas sima solenditati te et repernatur aut laciet harum voluptas eveni aut
+                        ventibus ut porest.</p>
+                </div>
+            </div>
+
+            <div class="work-section-1">
+                <div class="work-col-l">
+                    <a href="/2023/irish-defence-forces"><button class="index-btn work-btn">Defence Forces</button></a>
+                    <h2>TV/OOH/DOOH/SOCIAL</h2>
+                    <p>Acitectur? Quiatemquas sima solenditati te et repernatur aut laciet harum voluptas eveni aut
+                        ventibus ut porest.</p>
+                </div>
+                <div class="work-col-r">
+                    <a href="/2023/irish-defence-forces"><img
+                            src="{{ url_for('static', filename='images/work/army.png') }}" style="width: 100%;"></a>
+                </div>
+            </div>
+
+            <div class="work-section-1">
+                <div class="work-col-l">
+                    <img src="{{ url_for('static', filename='images/work/pass.png') }}" style="width: 100%;">
+                </div>
+                <div class="work-col-r">
+                    <button class="index-btn work-btn">Dept. of Foreign Affairs</button>
+                    <h2>TV/OOH/DOOH/SOCIAL</h2>
+                    <p>Acitectur? Quiatemquas sima solenditati te et repernatur aut laciet harum voluptas eveni aut
+                        ventibus ut porest.</p>
+                </div>
+            </div>
+
+            <div class="work-section-1">
+                <div class="work-col-l">
+                    <button class="index-btn work-btn">Knowledge Transfer Ireland</button>
+                    <h2>TV/OOH/DOOH/SOCIAL</h2>
+                    <p>Acitectur? Quiatemquas sima solenditati te et repernatur aut laciet harum voluptas eveni aut
+                        ventibus ut porest.</p>
+                </div>
+                <div class="work-col-r">
+                    <img src="{{ url_for('static', filename='images/work/kti.png') }}" style="width: 100%;">
+                </div>
+            </div>
+
+            <div class="work-section-1">
+                <div class="work-col-l">
+                    <img src="{{ url_for('static', filename='images/work/mas.png') }}" style="width: 100%;">
+                </div>
+                <div class="work-col-r">
+                    <button class="index-btn work-btn">Marks and Spencers</button>
+                    <h2>TV/OOH/DOOH/SOCIAL</h2>
+                    <p>Acitectur? Quiatemquas sima solenditati te et repernatur aut laciet harum voluptas eveni aut
+                        ventibus ut porest.</p>
+                </div>
+            </div>
+
+            <div class="work-section-1">
+                <div class="work-col-l">
+                    <button class="index-btn work-btn">DS 4</button>
+                    <h2>TV/OOH/DOOH/SOCIAL</h2>
+                    <p>Acitectur? Quiatemquas sima solenditati te et repernatur aut laciet harum voluptas eveni aut
+                        ventibus ut porest.</p>
+                </div>
+                <div class="work-col-r">
+                    <img src="{{ url_for('static', filename='images/work/ds4.png') }}" style="width: 100%;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="contact-us-banner" style="margin: 0 10% 0 10%;"
+    style="display: flex; justify-content: space-around; flex-direction: column;">
+    <div data-aos="fade-up" style="text-align: center; padding-top: 10%; padding-bottom: 10%;">
+        <a href="#top" class="chevron back-to-top-btn">
+            <img src="{{ url_for('static', filename='images/chevrons/BlackBTT.svg') }}">
+        </a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "/work_items/base-work.html" %}
+
+{% block content %}
+<!-- Content specific to Work Item 1 -->
+<div class="work-post-container" data-aos="fade-in">
+    <div class="flexbox-overlay-work-post">
+        <!-- Content for the flexbox overlay -->
+        <div class="work-post-header" data-aos="fade-up" data-aos-duration="1500">
+            <img src="{{ url_for('static', filename='images/chevrons/DoubleWhiteChevron.png') }}"
+                style="filter: invert(1);">
+            {{ title | safe }}
+        </div>
+        <div data-aos="fade-up" class="work-post-subheading">
+            <p>{{ subtitle | safe }}</p>
+        </div>
+
+    </div>
+</div>
+
+<div data-aos="fade-up" class="work-post" style="margin: 0% 10% 10% 10%;">
+    <!-- Content for the section below the video -->
+    <h1>{{ heading | safe }}</h1>
+    <p>{{ desc_text | safe }}</p>
+
+    <div class="work-item-video">
+        <img src="{{ video_url | safe }}">
+    </div>
+</div>
+
+<div data-aos="fade-up" class="work-post-black">
+    <!-- Content for the section below the video -->
+    <div style="margin: 0% 10% 0 10%;">
+        <!-- Slideshow container -->
+        <div class="slideshow-container-work">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides-work fade-work">
+                <!-- <div class="numbertext">1 / 3</div> -->
+                <img src="{{ carousel_img_1 | safe }}" style="width:100%">
+                <!-- <div class="text">Caption Text</div> -->
+            </div>
+
+            <div class="mySlides-work fade-work">
+                <!-- <div class="numbertext">2 / 3</div> -->
+                <img src="{{ carousel_img_2 | safe }}" style="width:100%">
+                <!-- <div class="text">Caption Two</div> -->
+            </div>
+
+            <div class="mySlides-work fade-work">
+                <!-- <div class="numbertext">3 / 3</div> -->
+                <img src="{{ carousel_img_3 | safe }}" style="width:100%">
+                <!-- <div class="text">Caption Three</div> -->
+            </div>
+
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <p>{{ carousel_text | safe }}</p>
+    </div>
+
+</div>
+
+<div class="work-post" style="margin: 10% 10% 0 10%;">
+    <div data-aos="fade-up" class="work-item-social-section" style="display: flex;">
+        <!-- Content for the section below the video -->
+        <div style="flex: 1;">
+            <h1>{{ social_header | safe }}</h1>
+            <p>{{ social_copy | safe }}</p>
+        </div>
+
+        <div data-aos="fade-up" style="flex: 1; text-align: center;">
+            <img src="{{ social_img_url | safe }}">
+        </div>
+    </div>
+</div>
+
+<hr style="margin: 0;">
+<section id="contact-us-banner" style="margin: 0 10% 0 10%; filter: invert(1);"
+    style="display: flex; justify-content: space-around; flex-direction: column;">
+    <div data-aos="fade-up" style="text-align: center; padding-top: 6%;">
+        <a href="/contact">
+            <button class="index-btn btn-contact-us">Contact Us</button>
+        </a>
+    </div>
+    <div data-aos="fade-up" style="text-align: center; padding-top: 20%; padding-bottom: 10%;">
+        <a href="#top" class="chevron back-to-top-btn">
+            <img src="{{ url_for('static', filename='images/chevrons/WhiteBTT.svg') }}">
+        </a>
+    </div>
+</section>
+
+{% endblock %}

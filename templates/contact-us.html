@@ -6,7 +6,8 @@
     <div class="team-container" data-aos="fade-in">
         <div class="flexbox-overlay-team">
             <!-- Content for the flexbox overlay -->
-            <div data-aos="fade-up" data-aos-duration="1500" class="team-header"><img src="{{ url_for('static', filename='images/chevrons/DoubleWhiteChevron.png') }}">Contact Us</div>
+            <div data-aos="fade-up" data-aos-duration="1500" class="team-header"><img
+                    src="{{ url_for('static', filename='images/chevrons/DoubleWhiteChevron.png') }}">Contact Us</div>
             <div data-aos="fade-up" class="team-subheading">
                 <p>Less dead weight, more deadly ideas.</p>
             </div>
@@ -18,17 +19,34 @@
         <div style="margin: 0% 10% 0 10%;">
             <div class="contact-section-1">
                 <div class="contact-col">
-                    <form class="contact-us-form">
-                        <label for="name">Name</label>
-                        <input class="input" type="text" id="name" name="name" required><br>
+                    <form class="contact-us-form" id="enquiry" name="enquiry" action="/form-submit"
+                        onsubmit="validateForm(event);" method="POST">
+                        <div class="form-row">
+                            <label class="block w-full required" for="enquiry_name">Name</label>
+                            <input type="text" id="enquiry_name" name="enquiry_name" required="required" maxlength="100"
+                                pattern=".{2,}" class="input" />
+                        </div>
+                        <div class="form-row">
+                            <label class="block w-full required" for="enquiry_email">Email</label>
+                            <input type="email" id="enquiry_email" name="enquiry_email" required="required"
+                                maxlength="255" class="input" />
+                        </div>
+                        <div class="form-row">
+                            <label class="block w-full required" for="enquiry_number">Number</label>
+                            <input type="text" id="enquiry_number" name="enquiry_number" required="required"
+                                maxlength="15" class="input" />
+                        </div>
+                        <div class="form-row">
+                            <label for="enquiry_message">Message</label>
+                            <textarea id="enquiry_message" name="enquiry_message" required="required" wrap="soft"
+                                style="overflow:hidden;" class="input message-box"></textarea>
+                        </div>
 
-                        <label for="email">Email</label>
-                        <input class="input" type="email" id="email" name="email" required><br>
+                        <div class="g-recaptcha" data-sitekey="6Lfcg1AmAAAAAN0cmK22PEW4Y9kcszCK_X8iQonD"></div>
 
-                        <label for="lname">Message</label>
-                        <input class="input message-box" type="text" id="message" name="message" required><br>
-
-                        <button class="index-btn">Submit</button>
+                        <div style="padding-top: 4%;">
+                            <button id="submit-btn" class="index-btn submit-btn" type="submit">Submit</button>
+                        </div>
                     </form>
                 </div>
                 <div class="contact-col center-align">
@@ -38,15 +56,19 @@
                             <a class="prev" onclick="plusSlides(-1)">❮</a>
                         </div>
                         <div class="mySlides">
-                            <a href="/"><img class="circle" src="{{ url_for('static', filename='images/team/neil.png') }}">
-                            <div class="text">Neil McKenna</div>
-                            <div>CEO</div></a>
+                            <a href="/"><img class="circle"
+                                    src="{{ url_for('static', filename='images/team/neil.png') }}">
+                                <div class="text">Neil McKenna</div>
+                                <div>CEO</div>
+                            </a>
                         </div>
 
                         <div class="mySlides">
-                            <a href="/"><img class="circle" src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
-                            <div class="text">David Monaghan</div>
-                            <div>Managing Director</div></a>
+                            <a href="/"><img class="circle"
+                                    src="{{ url_for('static', filename='images/team/default-profile-icon.jpg') }}">
+                                <div class="text">David Monaghan</div>
+                                <div>Managing Director</div>
+                            </a>
                         </div>
 
                         <div>
@@ -58,13 +80,12 @@
             </div>
         </div>
         <div class="contact-section-1">
-            <div class="contact-col" style="margin-top: 100px; background-color: blue;">
+            <div class="contact-col" style="margin-top: 100px; background-color: white;">
                 <div id="map" style="height:550px; width: 100%; "></div>
             </div>
         </div>
     </div>
 </section>
-
 
 <section id="contact-us-banner" style="margin: 0 10% 0 10%;"
     style="display: flex; justify-content: space-around; flex-direction: column;">
@@ -74,5 +95,21 @@
         </a>
     </div>
 </section>
+
+<script>
+    function validateForm(event) {
+        event.preventDefault(); // Prevent form submission until reCAPTCHA is validated
+
+        var response = grecaptcha.getResponse();
+        if (!response) {
+            alert('Please complete the reCAPTCHA.');
+            return;
+        }
+        document.getElementById('enquiry').submit();
+    }
+</script>
+
+<script defer src="{{ url_for('static', filename='js/contact-map.js') }}"></script>
+<script defer src="{{ url_for('static', filename='js/contact-slideshow.js') }}"></script>
 
 {% endblock %}

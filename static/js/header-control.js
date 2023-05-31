@@ -1,10 +1,14 @@
 const customNav = document.querySelector('.custom-nav');
+const backButton = document.querySelector('.back-button');
 
 window.addEventListener('scroll', () => {
     if(window.scrollY > 450) {
         customNav.classList.add('custom-nav-scrolled');
+        backButton.style.display = 'inline';
+
     } else if (window.scrollY <= 450) {
         customNav.classList.remove('custom-nav-scrolled');
+        backButton.style.display = 'none';
     }
 })
 

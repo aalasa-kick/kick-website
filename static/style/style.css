@@ -6,6 +6,16 @@ html {
   scroll-behavior: smooth;
 }
 
+.body-black{
+  background-color: black;
+  color: white;
+}
+
+.body-white{
+  background-color: white;
+  color: black;
+}
+
 img {
   max-width: inherit !important;
 }
@@ -261,7 +271,7 @@ section {
 
 @media (max-width: 768px) {
   .index-btn {
-    padding: 6%;
+    padding: 4%;
   }
 
   .back-to-top-btn img {
@@ -672,4 +682,30 @@ body {
   background-color: white;
   margin-top: 10px;
   position: relative;
+}
+
+.work-section-1{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  padding-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+  .work-section-1{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.work-section-1 img:hover{
+  transition: all 1s ease;
+  filter: brightness(0.6);
+  transform: scale(1.05);
+  cursor: crosshair
+}
+
+.work-section-1 button:hover{
+  filter: invert(1);
+  transition: all 1s ease;
 }

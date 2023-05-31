@@ -26,18 +26,16 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script defer src="{{ url_for('static', filename='js/header-control.js') }}"></script>
-    <script defer src="{{ url_for('static', filename='js/contact-map.js') }}"></script>
-    <script defer src="{{ url_for('static', filename='js/contact-slideshow.js') }}"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBco_8MR808LHrXkH-_9ZATCuyPiBCktBA&callback=initMap"></script>
 
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
         rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
-
 </head>
 
-<body id="top" style="background-color: black; color: white;">
+<body id="top" class={{ body_style |safe }}>
     <!-- NAV -->
     <nav class="custom-nav">
         <div class="nav-contents-container">
@@ -52,7 +50,7 @@
             <div class="links-container">
                 <ul class="links" style="display: flex; column-gap: 30px;">
                     <li class="link-item"><a class="nav-link teal-hover" href='/'>Clients</a></li>
-                    <li class="link-item"><a class="nav-link teal-hover" href='/'>Work</a></li>
+                    <li class="link-item"><a class="nav-link teal-hover" href='/work'>Work</a></li>
                     <li class="link-item"><a class="nav-link teal-hover" href='/team'>Team</a></li>
                     <li class="link-item"><a class="nav-link teal-hover" href='/contact'>Contact</a></li>
                 </ul>
@@ -70,8 +68,8 @@
         <div class="topnav">
             <div id="myLinks">
                 <a href="/">Clients</a>
-                <a href="/">Work</a>
-                <a href="/">Team</a>
+                <a href="/work">Work</a>
+                <a href="/team">Team</a>
                 <a href="/contact">Contact</a>
             </div>
         </div>
@@ -107,7 +105,7 @@
                         <div><a href=""><i class="icon-facebook icon-large"></i></a></div>
                         <div><a href=""><i class="icon-linkedin icon-large"></i></a></div>
                         <div><a href=""><i class="icon-instagram icon-large"></i></a></div>
-                    </div>
+                    </div><div class="back-button"></div>
                 </li>
             </ul>
         </div>
@@ -122,14 +120,8 @@
     <!-- End of page content -->
     <script src="{{ url_for('static', filename='js/lottie.js') }}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>AOS.init();</script>
-
-    <script>
-        (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
-            key: "",
-            v: "weekly",
-        });
-    </script>
 
 </body>
 
